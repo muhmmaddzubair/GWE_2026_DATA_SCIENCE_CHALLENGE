@@ -147,6 +147,10 @@ elif page == "EDA Dashboard":
 
     st.divider()
 
+    # ==========================
+    # Target Distribution
+    # ==========================
+
     st.subheader("Target Distribution")
 
     fig, ax = plt.subplots(figsize=(6,4))
@@ -157,9 +161,15 @@ elif page == "EDA Dashboard":
         ax=ax
     )
 
+    ax.set_title("Target Distribution")
+
     st.pyplot(fig)
 
     st.divider()
+
+    # ==========================
+    # BMI Distribution
+    # ==========================
 
     st.subheader("BMI Distribution")
 
@@ -170,7 +180,15 @@ elif page == "EDA Dashboard":
         ax=ax
     )
 
+    ax.set_title("BMI Distribution")
+
     st.pyplot(fig)
+
+    st.divider()
+
+    # ==========================
+    # Salt Intake Distribution
+    # ==========================
 
     st.subheader("Salt Intake Distribution")
 
@@ -181,12 +199,102 @@ elif page == "EDA Dashboard":
         ax=ax
     )
 
+    ax.set_title("Salt Intake Distribution")
+
     st.pyplot(fig)
 
     st.divider()
+
+    # ==========================
+    # Age vs Hypertension
+    # ==========================
+
+    st.subheader("Age vs Hypertension")
+
+    fig, ax = plt.subplots(figsize=(6,4))
+
+    sns.boxplot(
+        x="Has_Hypertension",
+        y="Age",
+        data=df,
+        ax=ax
+    )
+
+    ax.set_title("Age vs Hypertension")
+
+    st.pyplot(fig)
+
+    st.divider()
+
+    # ==========================
+    # BMI vs Hypertension
+    # ==========================
+
+    st.subheader("BMI vs Hypertension")
+
+    fig, ax = plt.subplots(figsize=(6,4))
+
+    sns.boxplot(
+        x="Has_Hypertension",
+        y="BMI",
+        data=df,
+        ax=ax
+    )
+
+    ax.set_title("BMI vs Hypertension")
+
+    st.pyplot(fig)
+
+    st.divider()
+
+    # ==========================
+    # Family History vs Hypertension
+    # ==========================
+
+    st.subheader("Family History vs Hypertension")
+
+    fig, ax = plt.subplots(figsize=(6,4))
+
+    sns.countplot(
+        x="Family_History",
+        hue="Has_Hypertension",
+        data=df,
+        ax=ax
+    )
+
+    ax.set_title("Family History vs Hypertension")
+
+    st.pyplot(fig)
+
+    st.divider()
+
+    # ==========================
+    # Smoking Status vs Hypertension
+    # ==========================
+
+    st.subheader("Smoking Status vs Hypertension")
+
+    fig, ax = plt.subplots(figsize=(6,4))
+
+    sns.countplot(
+        x="Smoking_Status",
+        hue="Has_Hypertension",
+        data=df,
+        ax=ax
+    )
+
+    ax.set_title("Smoking Status vs Hypertension")
+
+    st.pyplot(fig)
+
+    st.divider()
+
+    # ==========================
+    # Correlation Heatmap
+    # ==========================
+
     st.subheader("Correlation Heatmap")
 
-    # Encode categorical columns for correlation
     df_encoded = df.copy()
 
     df_encoded["Has_Hypertension"] = df_encoded["Has_Hypertension"].map({"Yes":1,"No":0})
@@ -220,6 +328,8 @@ elif page == "EDA Dashboard":
         linewidths=0.5,
         ax=ax
     )
+
+    ax.set_title("Correlation Heatmap")
 
     st.pyplot(fig)
 
