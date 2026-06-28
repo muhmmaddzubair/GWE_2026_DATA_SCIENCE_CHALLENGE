@@ -33,3 +33,5 @@ Proses Data Science dalam proyek ini dilakukan secara end-to-end, mencakup:
 - Dashboard visualization implementation.
 - Debugging and troubleshooting during development.
 - Deployment guidance using GitHub and Streamlit Community Cloud.
+
+**Link Deployment:** https://gwe2026datasciencechallenge-fvzzrp4gxh3vzweq7pbka6.streamlit.app/

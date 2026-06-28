@@ -66,12 +66,35 @@ if page == "Halaman Utama":
     st.title("🩺 Hypertension Risk Prediction")
 
     st.markdown("""
-Welcome to our **End-to-End Machine Learning Project**
-developed for **GWE 2026**.
+## Deskripsi Proyek
 
-This application predicts whether a patient has a risk
-of hypertension using the **Random Forest Classification**
-algorithm.
+Aplikasi ini merupakan implementasi **End-to-End Machine Learning**
+yang dikembangkan untuk **GWE 2026 Data Science Challenge**.
+
+Model Machine Learning digunakan untuk memprediksi apakah seseorang
+memiliki risiko hipertensi berdasarkan kondisi kesehatan,
+riwayat medis, dan gaya hidup.
+""")
+
+    st.divider()
+
+    st.subheader("📌 Latar Belakang")
+
+    st.write("""
+Hipertensi merupakan salah satu penyakit tidak menular yang menjadi penyebab utama penyakit jantung, stroke, dan gagal ginjal.
+Deteksi dini sangat penting agar pasien dapat melakukan tindakan pencegahan lebih awal.
+
+Melalui pemanfaatan Machine Learning, proses prediksi risiko hipertensi dapat dilakukan dengan lebih cepat dan membantu proses pengambilan keputusan.
+""")
+
+    st.divider()
+
+    st.subheader("🎯 Tujuan Proyek")
+
+    st.write("""
+- Menganalisis faktor-faktor yang memengaruhi hipertensi.
+- Membangun model Machine Learning untuk memprediksi hipertensi.
+- Menyediakan aplikasi berbasis Streamlit yang mudah digunakan.
 """)
 
     st.divider()
@@ -98,7 +121,7 @@ algorithm.
 
     st.divider()
 
-    st.subheader("Dataset Features")
+    st.subheader("📋 Dataset Features")
 
     st.markdown("""
 - Age
@@ -115,7 +138,29 @@ algorithm.
 
     st.divider()
 
-    st.subheader("Project Workflow")
+    st.subheader("🧭 Navigasi Aplikasi")
+
+    st.markdown("""
+🏠 **Home**
+
+Menampilkan informasi umum mengenai proyek.
+
+📊 **EDA Dashboard**
+
+Menampilkan visualisasi hasil Exploratory Data Analysis.
+
+🔍 **Prediction**
+
+Melakukan prediksi risiko hipertensi berdasarkan data yang dimasukkan pengguna.
+
+ℹ️ **About**
+
+Menampilkan informasi model, evaluasi, cara penggunaan, dan tim pengembang.
+""")
+
+    st.divider()
+
+    st.subheader("⚙️ Project Workflow")
 
     st.markdown("""
 1. Data Understanding
@@ -542,20 +587,42 @@ elif page == "About":
     st.markdown("""
 ### Hypertension Risk Prediction
 
-This application was developed as an End-to-End Machine Learning project for **GWE 2026**.
+Aplikasi ini dikembangkan sebagai proyek **End-to-End Machine Learning**
+untuk **GWE 2026 Data Science Challenge**.
 
-The objective is to predict whether a patient has hypertension based on lifestyle and medical history.
+Tujuan aplikasi adalah memprediksi risiko hipertensi berdasarkan
+karakteristik kesehatan dan gaya hidup pasien.
 """)
 
     st.divider()
 
-    st.subheader("Machine Learning Algorithm")
+    st.subheader("🤖 Machine Learning Model")
 
     st.write("""
-Random Forest Classifier
+Model yang digunakan adalah **Random Forest Classifier**.
+
+Random Forest dipilih karena memiliki performa yang baik,
+mampu menangani data numerik maupun kategorikal,
+serta cukup stabil dalam proses klasifikasi.
 """)
 
-    st.subheader("Dataset Features")
+    st.divider()
+
+    st.subheader("📈 Evaluation Metrics")
+
+    st.write("""
+Accuracy : **96.73%**
+
+Precision : **0.97**
+
+Recall : **0.97**
+
+F1-Score : **0.97**
+""")
+
+    st.divider()
+
+    st.subheader("📂 Dataset Features")
 
     st.write("""
 - Age
@@ -571,7 +638,7 @@ Random Forest Classifier
 
     st.divider()
 
-    st.subheader("Project Workflow")
+    st.subheader("⚙️ Project Workflow")
 
     st.write("""
 ✔ Data Understanding
@@ -591,12 +658,23 @@ Random Forest Classifier
 
     st.divider()
 
-    st.subheader("Team")
+    st.subheader("📝 Cara Menggunakan Aplikasi")
 
     st.write("""
-- Naufal Asa Malika (103012500151)
-
-- Muhammad Zubair (102022500261)
+1. Pilih menu **Prediction**.
+2. Masukkan seluruh data pasien.
+3. Klik tombol **Predict**.
+4. Sistem akan menampilkan hasil prediksi hipertensi beserta probabilitasnya.
 """)
 
-    st.success("Thank you for visiting our application!")
+    st.divider()
+
+    st.subheader("👥 Team")
+
+    st.write("""
+**Naufal Asa Malika**  (103012500151)
+
+**Muhammad Zubair**  (102022500261)
+""")
+
+    st.success("Terima kasih telah menggunakan aplikasi kami!")
