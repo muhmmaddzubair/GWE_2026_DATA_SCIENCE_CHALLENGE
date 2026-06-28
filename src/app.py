@@ -186,15 +186,17 @@ elif page == "EDA Dashboard":
 
     st.title("📊 Exploratory Data Analysis")
 
-    st.write(
-        "This page displays several visualizations from the hypertension dataset."
-    )
+    st.write("""
+    Halaman ini menampilkan hasil Exploratory Data Analysis (EDA) untuk
+    memahami karakteristik dataset serta hubungan antar variabel yang
+    digunakan dalam prediksi hipertensi.
+    """)
 
     st.divider()
 
-    # ==========================
+    # ======================================================
     # Target Distribution
-    # ==========================
+    # ======================================================
 
     st.subheader("Target Distribution")
 
@@ -210,11 +212,17 @@ elif page == "EDA Dashboard":
 
     st.pyplot(fig)
 
+    st.info("""
+📌 **Insight:**
+Grafik menunjukkan distribusi jumlah pasien yang mengalami hipertensi dan tidak mengalami hipertensi.
+Visualisasi ini membantu mengetahui keseimbangan data target sebelum proses pemodelan.
+""")
+
     st.divider()
 
-    # ==========================
+    # ======================================================
     # BMI Distribution
-    # ==========================
+    # ======================================================
 
     st.subheader("BMI Distribution")
 
@@ -229,11 +237,17 @@ elif page == "EDA Dashboard":
 
     st.pyplot(fig)
 
+    st.info("""
+📌 **Insight:**
+Distribusi BMI digunakan untuk melihat penyebaran nilai BMI pada seluruh data
+serta mendeteksi kemungkinan adanya nilai ekstrem (outlier).
+""")
+
     st.divider()
 
-    # ==========================
+    # ======================================================
     # Salt Intake Distribution
-    # ==========================
+    # ======================================================
 
     st.subheader("Salt Intake Distribution")
 
@@ -248,11 +262,17 @@ elif page == "EDA Dashboard":
 
     st.pyplot(fig)
 
+    st.info("""
+📌 **Insight:**
+Grafik menunjukkan distribusi konsumsi garam pada dataset.
+Perbedaan konsumsi garam dapat menjadi salah satu faktor yang berkaitan dengan risiko hipertensi.
+""")
+
     st.divider()
 
-    # ==========================
+    # ======================================================
     # Age vs Hypertension
-    # ==========================
+    # ======================================================
 
     st.subheader("Age vs Hypertension")
 
@@ -269,11 +289,16 @@ elif page == "EDA Dashboard":
 
     st.pyplot(fig)
 
+    st.info("""
+📌 **Insight:**
+Kelompok pasien dengan hipertensi cenderung memiliki usia yang lebih tinggi dibandingkan kelompok yang tidak mengalami hipertensi.
+""")
+
     st.divider()
 
-    # ==========================
+    # ======================================================
     # BMI vs Hypertension
-    # ==========================
+    # ======================================================
 
     st.subheader("BMI vs Hypertension")
 
@@ -290,11 +315,17 @@ elif page == "EDA Dashboard":
 
     st.pyplot(fig)
 
+    st.info("""
+📌 **Insight:**
+Pasien dengan hipertensi memiliki kecenderungan nilai BMI yang lebih tinggi,
+menunjukkan adanya hubungan antara obesitas dan hipertensi.
+""")
+
     st.divider()
 
-    # ==========================
+    # ======================================================
     # Family History vs Hypertension
-    # ==========================
+    # ======================================================
 
     st.subheader("Family History vs Hypertension")
 
@@ -311,11 +342,17 @@ elif page == "EDA Dashboard":
 
     st.pyplot(fig)
 
+    st.info("""
+📌 **Insight:**
+Riwayat hipertensi dalam keluarga menunjukkan hubungan dengan risiko hipertensi,
+di mana individu yang memiliki riwayat keluarga cenderung lebih berisiko.
+""")
+
     st.divider()
 
-    # ==========================
+    # ======================================================
     # Smoking Status vs Hypertension
-    # ==========================
+    # ======================================================
 
     st.subheader("Smoking Status vs Hypertension")
 
@@ -332,11 +369,17 @@ elif page == "EDA Dashboard":
 
     st.pyplot(fig)
 
+    st.info("""
+📌 **Insight:**
+Grafik membandingkan status merokok dengan kondisi hipertensi.
+Kebiasaan merokok dapat menjadi salah satu faktor yang memengaruhi risiko hipertensi.
+""")
+
     st.divider()
 
-    # ==========================
+    # ======================================================
     # Correlation Heatmap
-    # ==========================
+    # ======================================================
 
     st.subheader("Correlation Heatmap")
 
@@ -377,6 +420,23 @@ elif page == "EDA Dashboard":
     ax.set_title("Correlation Heatmap")
 
     st.pyplot(fig)
+
+    st.info("""
+📌 **Insight:**
+Heatmap digunakan untuk melihat hubungan antar variabel.
+Semakin mendekati nilai 1 atau -1 menunjukkan hubungan yang semakin kuat,
+sedangkan nilai yang mendekati 0 menunjukkan hubungan yang lemah.
+""")
+
+    st.divider()
+
+    st.subheader("📌 Kesimpulan EDA")
+
+    st.success("""
+Berdasarkan hasil Exploratory Data Analysis (EDA), variabel seperti usia, BMI,
+riwayat keluarga, dan status merokok menunjukkan hubungan terhadap risiko hipertensi.
+Hasil analisis ini menjadi dasar dalam pembangunan model Machine Learning untuk memprediksi hipertensi.
+""")
 
 # =====================================================
 # PREDICTION
